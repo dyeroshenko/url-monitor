@@ -1,8 +1,8 @@
 # URL Monitor
 
-Url Monitor is a simple tool to check the HTTP status and configuration (host ip, round-trip-time, etc) of any URL!
+Url Monitor is a simple tool to check the HTTP status and configuration (host ip, round-trip-time, etc) of any URL! Supported statuses - [here](https://github.com/dyeroshenko/url-monitor/blob/5a463da138d77c488687b919d04621eac9f1e1b9/components/status.py#L9)
 
-List of supported statuses - [here](https://github.com/dyeroshenko/url-monitor/blob/5a463da138d77c488687b919d04621eac9f1e1b9/components/status.py#L9) 
+Live demo: [here](https://url-monitor.herokuapp.com/)
 
 ![image](https://raw.githubusercontent.com/dyeroshenko/url-monitor/master/screenshot.gif)
 
