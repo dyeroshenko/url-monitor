@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 db = SQLAlchemy()
 
@@ -18,4 +19,5 @@ def createApp() -> 'app':
 
 
 if __name__ == '__main__':
-    createApp().run(host='0.0.0.0', debug=False)
+    port = int(os.environ.get('PORT', 5000))
+    createApp().run(host='0.0.0.0', port=port, debug=False)
