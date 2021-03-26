@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="wrapper">
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    {% for item in table_titles %}
+                    <th>{{ item }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in data %}
+                <tr>
+                    <td>{{ record.url }}</td>
+                    <td>{{ record.timestamp }}</td>
+                    <td>{{ record.host }}</td>
+                    <td>{{ record.ip }}</td>
+                    <td>{{ record.rtt }}</td>
+                    <td>{{ record.http_code }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

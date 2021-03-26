@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="wrapper">
+
+    <span class='sub-title'>Check <span class='color'>URL</span> status with one click!</span>
+    <form id='form' method="POST">
+        <input name='url' id='url' type="text" placeholder="https://abc.xyz">
+        <button type="submit" id="button">Check</button>
+    </form>
+
+    <div class="content" id='content'></div>
+    <div id="stats" class='stats'></div>
+</div>
+
+{% endblock %}
