@@ -9,14 +9,13 @@ List of supported statuses - [here](https://github.com/dyeroshenko/url-monitor/b
 
 ## Functionality and stack
 
-Back:
+Back-end:
  * Python3
  * Flask
  * SQLAlchemy
 
-Front:
- * Vanilla JS
- * HTML / CSS (no frameworks as well)
+Front-end:
+ * Vanilla JS, HTML & CSS 
 
 
   
@@ -34,11 +33,11 @@ to check the current status.
 ```
 docker build --tag [project_name] .
 ```
-
 3. Run image in container: 
 ```
 docker run -p 5000:5000 [project_name]
 ```
+4. Run http://127.0.0.1:5000/ in your browser 
 
-4. Enjoy! 
+5. Enjoy! 
  
