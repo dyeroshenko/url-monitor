@@ -27,5 +27,18 @@ Application uses these network services / libraries:
  
 to check the current status. 
 
-Enjoy! 
+## How to install (with Docker)
+
+1. Clone or download repository
+2. Use Dockerfile to build a docker-image on your machine:
+```
+docker build --tag [project_name] .
+```
+
+3. Run image in container: 
+```
+docker run -p 5000:5000 [project_name]
+```
+
+4. Enjoy! 
  
