@@ -17,8 +17,9 @@ class Services:
 
     def isExistingHost(self) -> bool: 
         try: 
-            req = requests.get(self.url)
+            requests.get(self.url)
             return True
+            
         except: 
             return False
 
