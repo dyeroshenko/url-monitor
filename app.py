@@ -9,6 +9,7 @@ dashboard_blueprint = Blueprint('dashboard', __name__)
 
 @home_blueprint.route('/', methods=['GET'])
 def home() -> 'html':
+    ''' Renders main page HTML '''
 
     return render_template(
                             'view.html',
@@ -17,6 +18,12 @@ def home() -> 'html':
 
 @home_post_blueprint.route('/post', methods=['POST'])
 def home_post() -> Dict[str, str]: 
+    '''
+    Takes [URL] parameter posted by home() using JS fetch: 
+    1. If no url param is provided, returns an error
+    2. Else adds trailling '/' and passes [url]] to Handler()
+    '''
+
     url = request.form['url']
 
     if url:
@@ -30,7 +37,8 @@ def home_post() -> Dict[str, str]:
     
 @dashboard_blueprint.route('/dashboard', methods=['GET'])
 def dashboard() -> 'html':
-
+    ''' Renders HTML view with a dasboard of processed URLs along with attributes '''
+    
     handler = Handler()
 
     table_titles = ('URL', 'Checked', 'Host name','IP Address','Round Trip Time','Response code')

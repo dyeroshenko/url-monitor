@@ -1,5 +1,5 @@
 __pycache__/
 *.pyc
 .vscode/
-uptime_monitor/
 .DS_Store
+url_venv/

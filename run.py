@@ -5,6 +5,8 @@ import os
 db = SQLAlchemy()
 
 def createApp() -> 'app':
+    ''' Builds app by using imported blueprints and SQLAlchemy DB integration from app.py '''
+    
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///logs.sqlite3'
     db.init_app(app)

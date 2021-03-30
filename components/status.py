@@ -7,6 +7,10 @@ from .services import Services
 
 @dataclass
 class Responses:
+    '''
+    Class to store code:description mapping for HTTP responses
+    '''
+    
     statuses = {
                         '200': 'OK!',
 
@@ -77,12 +81,16 @@ class Responses:
 
 
 class Status(Responses):
+    ''' Class for getting URL stats (response code:description, round-trip-time) '''
+
     def __init__(self, url):
         self.url = url
         self.service = Services(self.url)
         
 
     def getUrlResponse(self) -> Tuple[int, str]: 
+        ''' Takes [url] attribute and checks HTTP response with requests library.  Returns http code and custom message '''
+        
         req = requests.get(self.url)
         code = req.status_code
         status = self.statuses.get(str(code))
@@ -96,6 +104,11 @@ class Status(Responses):
 
 
     def checkRoundTripTime(self) -> str:
+        '''
+        Takes hostname extracted by Services.getHostName() and pings IP address with ping3 library.
+        Returns round-trip-time in ms (string) or customized error
+        '''
+
         host = self.service.getHostName()
         rtp = ping(host, unit = 'ms')
 
